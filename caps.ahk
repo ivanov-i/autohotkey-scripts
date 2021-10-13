@@ -16,8 +16,9 @@ Return
 *CapsLock up::
     ; Modify the threshold time (in milliseconds) as necessary
     If ((A_TickCount-cDown) < 150)
-        Send {Blind}{Ctrl Up} {LWin down} {Space} {LWin up}
+        Send {Blind}{Ctrl Up}{LWin down}{Space down}{Space up}{LWin up}
     Else
         Send {Blind}{Ctrl Up}
 Return
+
 
