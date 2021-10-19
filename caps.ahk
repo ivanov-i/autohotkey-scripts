@@ -15,20 +15,22 @@ $CapsLock::
     Send {Blind}{Ctrl Up}{LWin down}{Space down}{Space up}{LWin up}
 Return
 
-;$+CapsLock::
-;    Send {Blind}{CapsLock down}{CapsLock up}
-;Return
-
 ~Shift::
-if (A_PriorHotkey = "~Shift" and A_TimeSincePriorHotkey < 400)
+if (A_PriorHotkey <> "~Shift" or A_TimeSincePriorHotkey > 400)
 {
-	KeyWait, LShift
-	state := GetKeyState("Capslock", "T")  ; 1 if CapsLock is ON, 0 otherwise.
-	If (state="0")
-		SetCapsLockState, On
-	Else
-		SetCapsLockState, Off
-	Return
+; not a double click
+    KeyWait, Shift
+    Return
+}
+else
+{
+;shift double click
+    state := GetKeyState("Capslock", "T")  ; 1 if CapsLock is ON, 0 otherwise.
+    If (state="0")
+	    SetCapsLockState, On
+    Else
+	    SetCapsLockState, Off
+    return
 }
 Return
 
