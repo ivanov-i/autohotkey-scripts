@@ -15,22 +15,12 @@ $CapsLock::
     Send {Blind}{Ctrl Up}{LWin down}{Space down}{Space up}{LWin up}
 Return
 
-~Shift::
-if (A_PriorHotkey <> "~Shift" or A_TimeSincePriorHotkey > 400)
-{
-; not a double click
-    KeyWait, Shift
-    Return
-}
-else
-{
-;shift double click
++Esc::
     state := GetKeyState("Capslock", "T")  ; 1 if CapsLock is ON, 0 otherwise.
     If (state="0")
 	    SetCapsLockState, On
     Else
 	    SetCapsLockState, Off
     return
-}
 Return
 
