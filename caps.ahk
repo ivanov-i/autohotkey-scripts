@@ -5,7 +5,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 $CapsLock::
-    Send {Blind}{Ctrl Up}{LWin down}{Space down}{Space up}{LWin up}
+    Send {Blind}{LWin down}{Space down}{Space up}{LWin up}
 Return
 
 +Esc::
